@@ -1,19 +1,19 @@
 # config valid for current version and patch releases of Capistrano
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.17.3"
+lock '~> 3.17.3'
 
-set :application, "portal_system"
-set :repo_url, "https://github.com/senaygui/ngvc_portal.git"
+set :application, 'portal_system'
+set :repo_url, 'https://github.com/senaygui/ngvc_portal_system.git'
 # set :ssh_options, { :forward_agent => true, :port => 4321 }
-set :user, "deploy"
+set :user, 'deploy'
 set :passenger_restart_with_touch, true
 # set :rbenv_path, '/home/deploy/.rbenv/'
-set :stages, %w(production staging)
+set :stages, %w[production staging]
 # append :linked_files, "config/database.yml", "config/master.key"
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
 set :keep_releases, 5
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
