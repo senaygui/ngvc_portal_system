@@ -1,20 +1,20 @@
 # Add the new server with custom SSH port
-server "15.235.65.231",
-  user: "deploy",
-  roles: %w{app web db}, # Assign roles as needed
-  ssh_options: {
-    port: 99, # Custom SSH port
-    user: "deploy" # Optional, explicitly specify user if needed
-  }
+server '15.235.65.231',
+       user: 'deploy',
+       roles: %w[app web db], # Assign roles as needed
+       ssh_options: {
+         port: 99, # Custom SSH port
+         user: 'deploy' # Optional, explicitly specify user if needed
+       }
 
 # Existing servers
-role :app, %w{deploy@141.95.85.206}
-role :web, %w{deploy@141.95.85.206}
-role :db, %w{deploy@141.95.85.206}, primary: true
+role :app, %w[deploy@15.235.65.231]
+role :web, %w[deploy@15.235.65.231]
+role :db, %w[deploy@15.235.65.231], primary: true
 
 # Additional configurations
-set :branch, "master"
-set :rails_env, "production"
+set :branch, 'master'
+set :rails_env, 'production'
 set :deploy_to, '/home/deploy/portal_system'
 
 # server-based syntax
@@ -25,8 +25,6 @@ set :deploy_to, '/home/deploy/portal_system'
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-
-
 
 # role-based syntax
 # ==================
@@ -40,8 +38,6 @@ set :deploy_to, '/home/deploy/portal_system'
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-
-
 # Configuration
 # =============
 # You can set any configuration variable like in config/deploy.rb
@@ -49,8 +45,6 @@ set :deploy_to, '/home/deploy/portal_system'
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-
-
 
 # Custom SSH Options
 # ==================
