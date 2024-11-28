@@ -1,6 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 # config valid for current version and patch releases of Capistrano
-lock '~> 3.17.3'
+lock '~> 3.19.1'
 
 set :application, 'portal_system'
 set :repo_url, 'https://github.com/senaygui/ngvc_portal_system.git'
