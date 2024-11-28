@@ -1,6 +1,18 @@
+# Add the new server with custom SSH port
+server "15.235.65.231",
+  user: "deploy",
+  roles: %w{app web db}, # Assign roles as needed
+  ssh_options: {
+    port: 99, # Custom SSH port
+    user: "deploy" # Optional, explicitly specify user if needed
+  }
+
+# Existing servers
 role :app, %w{deploy@141.95.85.206}
 role :web, %w{deploy@141.95.85.206}
-role :db, %w{deploy@141.95.85.206}, :primary => true
+role :db, %w{deploy@141.95.85.206}, primary: true
+
+# Additional configurations
 set :branch, "master"
 set :rails_env, "production"
 set :deploy_to, '/home/deploy/portal_system'
