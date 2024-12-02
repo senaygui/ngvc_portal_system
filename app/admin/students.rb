@@ -73,7 +73,7 @@ ActiveAdmin.register Student do
       "#{n.first_name.upcase} #{n.middle_name.upcase} #{n.last_name.upcase}"
     end
     column 'Department', sortable: true do |d|
-      link_to d.program.department.department_name, [:admin, d.program.department] if d.program.present?
+      link_to d.program.department.department_name, [:admin, d.program.department] if d.program.department.present?
     end
     column 'Program', sortable: true do |d|
       if d.program.present?
